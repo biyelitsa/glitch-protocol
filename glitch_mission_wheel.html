@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Glitch Protocol Spinner</title>
+  <style>
+    body {
+      background-color: #0a0a0a;
+      color: #f0f0f0;
+      font-family: 'Courier New', Courier, monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      text-shadow: 0 0 5px #f0f0f0;
+    }
+    button {
+      background-color: #111;
+      color: #f0f0f0;
+      border: 1px solid #f0f0f0;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-bottom: 20px;
+    }
+    .result {
+      font-size: 18px;
+      text-align: center;
+      max-width: 600px;
+      padding: 20px;
+      border: 1px dashed #f0f0f0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Glitch Mission Wheel</h1>
+  <button onclick="spinWheel()">Spin the Protocol</button>
+  <div class="result" id="result">Click to receive your mission.</div>
+
+  <script>
+    const missions = [
+      "Leave a coded message in a public space.",
+      "Mark an object and monitor its movement for 48h.",
+      "Repeat one phrase to three different people. Observe.",
+      "Observe a mirror for 60 seconds. Document anomalies.",
+      "Visit a place from a dream. Compare it to memory.",
+      "Record ambient noise in silence. Play it back at 3x speed.",
+      "Write a message to your future self, hide it, then forget.",
+      "Stand still for 3 minutes in a busy place. Watch only reactions.",
+      "Photograph the same object at 3 different times. Compare.",
+      "Wear something out-of-character for a day. Track reactions."
+    ];
+
+    function spinWheel() {
+      const choice = missions[Math.floor(Math.random() * missions.length)];
+      document.getElementById("result").innerText = choice;
+    }
+  </script>
+</body>
+</html>
